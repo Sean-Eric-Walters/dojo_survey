@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey Result </title>
+    <style>
+        a:link {
+            text-decoration: none;
+            color: black;
+        }
+        
+        a:visited {
+            text-decoration: none;
+            color: black;
+        }
+        </style>
+</head>
+<body style="font-family:verdana;"></body>>
+    <div >
+        <h1 style="margin-bottom: 5px; color:rgb(39, 39, 149);">Submitted Info</h1>
+        <table>
+            <tbody>
+                {% for key in form_response: %}
+                    <tr>
+                        <td>{{ key.title() + ":" }}</td>
+                        <td>{{ ", ".join(form_response.getlist(key)) }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p>
+            <button><a href="/" role="button" >Go Back</a></button>
+        </p>
+    </div>
+</body>
+</html>
